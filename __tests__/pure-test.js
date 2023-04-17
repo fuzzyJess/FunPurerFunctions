@@ -7,5 +7,9 @@ describe('removeLastNumber', () => {
     const returnValue = removeLastNumber(input);
     expect(input).not.toBe(returnValue);
   });
-
+  test('does not mutate the input array', () => {
+    const input = ['a', 'b', 'c'];
+    removeLastNumber(input);
+    expect(input).toEqual(['a', 'b', 'c']);
+  });
 });
