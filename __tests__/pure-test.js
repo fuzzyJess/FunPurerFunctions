@@ -34,4 +34,12 @@ describe('raiseSalaries', () => {
                           { name: "Bob", salary: 2000 }, 
                           { name: "Vel", salary: 4500 }]);
   });
-})
+  test('when passed an array and 0 for the increase returns a new array with same values', () => {
+    const result = raiseSalaries([{ name: "Alice", salary: 3000 }, 
+    { name: "Bob", salary: 2000 }, 
+    { name: "Vel", salary: 4500 }], 0);
+    expect(result).toEqual([{ name: "Alice", salary: 3000 }, 
+    { name: "Bob", salary: 2000 }, 
+    { name: "Vel", salary: 4500 }]);
+  });
+});

@@ -5,7 +5,8 @@ return beginningNumbers;
 };
 
 function raiseSalaries(employees, increase) {
-
+    salariesRaised = [...employees];
+    return salariesRaised;
 }
 // This function should take as its arguments:
 
