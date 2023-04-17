@@ -5,7 +5,15 @@ return beginningNumbers;
 };
 
 function raiseSalaries(employees, increase) {
-    salariesRaised = [...employees];
+    salariesRaised = [];
+    for (let i = 0; i < employees.length; i++) {
+        salariesRaised.push(employees[i]);
+    }
+    let originalSalary = salariesRaised[0].salary;
+    let salaryIncrease = originalSalary / 100 * increase;
+    salariesRaised[0].salary += salaryIncrease; 
+    console.log(salariesRaised, "<salariesRaised");
+    console.log(employees, "< employees");
     return salariesRaised;
 }
 // This function should take as its arguments:
