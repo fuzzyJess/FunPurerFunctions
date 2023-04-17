@@ -1,5 +1,6 @@
 function removeLastNumber(numbers) {
-    let beginningNumbers = [];
+    let beginningNumbers = [...numbers];
+    beginningNumbers.pop();
 return beginningNumbers;
 }
 
