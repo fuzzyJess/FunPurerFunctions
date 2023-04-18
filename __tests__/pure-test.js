@@ -75,5 +75,8 @@ describe('updateTasks', () => {
     const result = updateTasks({name: "Jessica", tasks: ["read book", "make dinner", "hang laundry"]}, "eat chocolate");
     expect(result).toEqual({name: "Jessica", tasks: ["read book", "make dinner", "hang laundry", "eat chocolate"]})
   });
-  
+  test('adds multiple tasks to person object correctly', () => {
+    const result = updateTasks({name: "Jessica", tasks: ["read book"]}, "make dinner", "hang laundry", "eat chocolate", "sleep");
+    expect(result).toEqual({name: "Jessica", tasks: ["read book", "make dinner", "hang laundry", "eat chocolate", "sleep"]})
+  });
 });
