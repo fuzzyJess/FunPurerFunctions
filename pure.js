@@ -6,26 +6,30 @@ return beginningNumbers;
 
 function raiseSalaries(employees, increase) {
     salariesRaised = [];
-    for (let i = 0; i < employees.length; i++) {
-        salariesRaised.push(employees[i]);
-        let originalSalary = salariesRaised[i].salary;
-        let salaryIncrease = originalSalary / 100 * increase;
-        salariesRaised[i].salary += salaryIncrease; 
-    }
+        for (let i = 0; i < employees.length; i++) {
+            salariesRaised.push(employees[i]);
+            let originalSalary = salariesRaised[i].salary;
+            let salaryIncrease = originalSalary / 100 * increase;
+            salariesRaised[i].salary += salaryIncrease; 
+        }
     return salariesRaised;
 }
 
 function updateTasks(person) {
     const updatedPerson = {};
-        updatedPerson.name = person.name;
-        updatedPerson.tasks = [];
-    for (let i = 0; i < person.tasks.length; i++) {
-        updatedPerson.tasks.push(person.tasks[i]);
-    };
-    for (let j = 1; j < arguments.length; j++) {
-    updatedPerson.tasks.push(arguments[j]);
-    }
+    updatedPerson.name = person.name;
+    updatedPerson.tasks = [];
+        for (let i = 0; i < person.tasks.length; i++) {
+            updatedPerson.tasks.push(person.tasks[i]);
+        };
+        for (let j = 1; j < arguments.length; j++) {
+        updatedPerson.tasks.push(arguments[j]);
+        }
     return updatedPerson;
 }
 
-module.exports = {removeLastNumber, raiseSalaries, updateTasks};
+function cloneObject(target, source) {
+    return target;
+}
+
+module.exports = {removeLastNumber, raiseSalaries, updateTasks, cloneObject};

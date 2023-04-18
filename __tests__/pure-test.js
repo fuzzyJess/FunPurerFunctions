@@ -1,4 +1,4 @@
-const {removeLastNumber, raiseSalaries, updateTasks} = require('../pure.js');
+const {removeLastNumber, raiseSalaries, updateTasks, cloneObject} = require('../pure.js');
 
 describe('removeLastNumber', () => {
     test('returns a new array', () => {
@@ -80,3 +80,11 @@ describe('updateTasks', () => {
     expect(result).toEqual({name: "Jessica", tasks: ["read book", "make dinner", "hang laundry", "eat chocolate", "sleep"]})
   });
 });
+
+describe('cloneObject', () => {
+  test('object returned is the same as the target object', () => {
+    const input = { a: 1, b: 2 };
+    const returnValue = cloneObject(input);
+    expect(input).toBe(returnValue);
+  })
+})
