@@ -45,5 +45,13 @@ describe('raiseSalaries', () => {
   test('when passed an array with one employee correctly increases the salary', () => {
     const result = raiseSalaries([{ name: "Alice", salary: 3000 }], 10);
     expect(result).toEqual([{ name: 'Alice', salary: 3300 }]);
-  })
+  });
+  test('when passed an array with multiple employees correctly increases all their salaries', () => {
+    const result = raiseSalaries([{ name: "Alice", salary: 3000 }, 
+    { name: "Bob", salary: 2000 }, 
+    { name: "Vel", salary: 4500 }], 10);
+    expect(result).toEqual([  { name: 'Alice', salary: 3300 }, 
+    { name: 'Bob', salary: 2200 }, 
+    { name: 'Vel', salary: 4950 } ]);
+  });
 });
