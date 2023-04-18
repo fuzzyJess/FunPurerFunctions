@@ -67,8 +67,13 @@ describe('updateTasks', () => {
     updateTasks(input);
     expect(input).toEqual({ name: "Jessica", tasks: ["read book"]});
   });
-  test.only('adds one task to person object correctly', () => {
+  test('adds one task to person object correctly', () => {
     const result = updateTasks({name: "Jessica", tasks: ["read book"]}, "make dinner");
     expect(result).toEqual({name: "Jessica", tasks: ["read book", "make dinner"]})
-  })
-})
+  });
+  test('adds one more task to person object that already has multiple tasks', () => {
+    const result = updateTasks({name: "Jessica", tasks: ["read book", "make dinner", "hang laundry"]}, "eat chocolate");
+    expect(result).toEqual({name: "Jessica", tasks: ["read book", "make dinner", "hang laundry", "eat chocolate"]})
+  });
+  
+});
