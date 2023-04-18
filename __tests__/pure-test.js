@@ -1,4 +1,4 @@
-const {removeLastNumber, raiseSalaries} = require('../pure.js');
+const {removeLastNumber, raiseSalaries, updateTasks} = require('../pure.js');
 
 describe('removeLastNumber', () => {
     test('returns a new array', () => {
@@ -55,3 +55,16 @@ describe('raiseSalaries', () => {
     { name: 'Vel', salary: 4950 } ]);
   });
 });
+
+describe('updateTasks', () => {
+  test('returns a new object', () => {
+    const input = { name: "Jessica", tasks: ["read book"]};
+    const returnValue = updateTasks(input);
+    expect(input).not.toBe(returnValue);
+  });
+  test('does not mutate the input object', () => {
+    const input = { name: "Jessica", tasks: ["read book"]};
+    updateTasks(input);
+    expect(input).toEqual({ name: "Jessica", tasks: ["read book"]});
+  });
+})
