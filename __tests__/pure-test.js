@@ -67,4 +67,8 @@ describe('updateTasks', () => {
     updateTasks(input);
     expect(input).toEqual({ name: "Jessica", tasks: ["read book"]});
   });
+  test.only('adds one task to person object correctly', () => {
+    const result = updateTasks({name: "Jessica", tasks: ["read book"]}, "make dinner");
+    expect(result).toEqual({name: "Jessica", tasks: ["read book", "make dinner"]})
+  })
 })

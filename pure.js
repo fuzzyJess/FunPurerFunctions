@@ -16,7 +16,14 @@ function raiseSalaries(employees, increase) {
 }
 
 function updateTasks(person) {
-
+    const updatedPerson = {};
+        updatedPerson.name = person.name;
+        updatedPerson.tasks = [];
+    for (let i = 0; i < person.tasks.length; i++) {
+        updatedPerson.tasks.push(person.tasks[i]);
+    };
+    updatedPerson.tasks.push(arguments[1]);
+    return updatedPerson;
 }
 
 /* The function should return a new person object with a new tasks 
