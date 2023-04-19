@@ -53,4 +53,18 @@ function calculateConfectioneryCosts(celebs) {
     return calculatedCosts;
 }
 
-module.exports = {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts};
+// Reimplementation
+
+function map() {
+
+};
+
+function filter() {
+
+};
+
+function slice() {
+
+};
+
+module.exports = {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts, map, filter, slice };

@@ -1,4 +1,4 @@
-const {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts } = require('../pure.js');
+const {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts, map, filter, slice } = require('../pure.js');
 
 describe('removeLastNumber', () => {
     test('returns a new array', () => {
