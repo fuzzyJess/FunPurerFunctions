@@ -93,9 +93,9 @@ and end represent the index of items in that array.
 
 The original array will not be modified.  */
 
-function slice(arr, start, end) {
+function slice(arr, start, end = arr.length + 1) {
     const slicedArr = [];
-    for (let i = start; i < arr.length; i++) {
+    for (let i = start; i < end - 1; i++) {
         slicedArr.push(arr[i]);
     };
     return slicedArr;
