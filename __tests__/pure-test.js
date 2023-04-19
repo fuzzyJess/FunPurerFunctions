@@ -202,4 +202,9 @@ describe('slice', () => {
     slice(input, 1);
     expect(input).toEqual([4, 5, 6]);
   });
-})
+  test('returns rest of array from start index', () => {
+    const input = [4, 5, 6];
+    result = slice(input, 1);
+    expect(result).toEqual([5, 6]);
+  });
+});

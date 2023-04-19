@@ -93,8 +93,12 @@ and end represent the index of items in that array.
 
 The original array will not be modified.  */
 
-function slice() {
-
+function slice(arr, start, end) {
+    const slicedArr = [];
+    for (let i = start; i < arr.length; i++) {
+        slicedArr.push(arr[i]);
+    };
+    return slicedArr;
 };
 
 module.exports = {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts, map, multiplyByFive, filter, higherThanFive, slice };
