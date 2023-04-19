@@ -104,5 +104,12 @@ describe('cloneObject', () => {
     const source = { b: 5, c: 4 };
     const result = cloneObject(target, source);
     expect(result).toEqual({ a: 1, b: 5, c: 4 });
-  })
+  });
+  test('target object modified correctly when passed multiple source objects', () => {
+    const target = { a: 1, b: 2 };
+    const source1 = { b: 5, c: 4 };
+    const source2 = { d: 3 };
+    const result = cloneObject(target, source1, source2);
+    expect(result).toEqual({ a: 1, b: 5, c: 4, d: 3 });
+  });
 });

@@ -28,9 +28,11 @@ function updateTasks(person) {
     return updatedPerson;
 }
 
-function cloneObject(target, source) {
-    for (property in source) {
-        target[property] = source[property];
+function cloneObject(target) {
+    for (let i = 1; i < arguments.length; i++) {
+        for (property in arguments[i]) {
+            target[property] = arguments[i][property];
+        }
     }
     return target;
 }
