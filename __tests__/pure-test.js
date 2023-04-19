@@ -92,5 +92,11 @@ describe('cloneObject', () => {
     const source = { c: 5 };
     const result = cloneObject(target, source);
     expect(result).toEqual({ a: 1, b: 2, c: 5 });
-  })
-})
+  });
+  test('target object has existing property modified to match property in source object', () => {
+    const target = { a: 1, b: 2 };
+    const source = { b: 5 };
+    const result = cloneObject(target, source);
+    expect(result).toEqual({ a: 1, b: 5 });
+  });
+});
