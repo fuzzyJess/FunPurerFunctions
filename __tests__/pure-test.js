@@ -190,3 +190,16 @@ describe('filter', () => {
     expect(result2).toEqual([29, 12, 6]);
   });
 });
+
+describe('slice', () => {
+  test('returns a new array', () => {
+    const input = [4, 5, 6];
+    const returnValue = slice(input, 1);
+    expect(input).not.toBe(returnValue);
+  });
+  test('does not mutate the input array', () => {
+    const input = [4, 5, 6];
+    slice(input, 1);
+    expect(input).toEqual([4, 5, 6]);
+  });
+})
