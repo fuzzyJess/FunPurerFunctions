@@ -1,4 +1,4 @@
-const {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts, map, filter, slice } = require('../pure.js');
+const {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts, map, multiplyByFive, filter, slice } = require('../pure.js');
 
 describe('removeLastNumber', () => {
     test('returns a new array', () => {
@@ -145,3 +145,16 @@ describe('calculateConfectioneryCosts', () => {
     ]);
   });
 });
+
+describe('map', () => {
+  test('returns a new array', () => {
+    const input = [1, 2, 3];
+    const returnValue = map(input);
+    expect(input).not.toBe(returnValue);
+  });
+  test('does not mutate the input array', () => {
+    const input = ['1', '2', '3'];
+    removeLastNumber(input);
+    expect(input).toEqual(['a', 'b', 'c']);
+  });
+})

@@ -55,9 +55,16 @@ function calculateConfectioneryCosts(celebs) {
 
 // Reimplementation
 
-function map() {
-
+function map(funct, arr) {
+    
+    arr.forEach((element) => {
+        funct(element)
+    })
 };
+
+function multiplyByFive(num){
+return num * 5;
+}
 
 function filter() {
 
@@ -67,4 +74,4 @@ function slice() {
 
 };
 
-module.exports = {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts, map, filter, slice };
+module.exports = {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts, map, multiplyByFive, filter, slice };
