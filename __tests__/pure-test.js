@@ -161,5 +161,10 @@ describe('map', () => {
     const input = [1];
     result = map(input, multiplyByFive);
     expect(result).toEqual([5]);
-  })
-})
+  });
+  test('returns new array containing multiple values correctly changed', () => {
+    const input = [1, 2, 3];
+    result = map(input, multiplyByFive);
+    expect(result).toEqual([5, 10, 15]);
+  });
+});
