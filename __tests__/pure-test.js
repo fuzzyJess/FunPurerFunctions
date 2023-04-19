@@ -116,13 +116,19 @@ describe('cloneObject', () => {
 
 describe('calculateConfectioneryCosts', () => {
   test('returns a new array', () => {
-    const input = [{ name: "Beyonce Bowls", yearlyCumulativeSpend: "£44", purchaseToday: { item: "White mice", costPerItem: "£3", amountBought: 17, }}];
+    const input = [{ name: "Beyonce Bowls", yearlyCumulativeSpend: "£44", purchaseToday: { item: "White mice", costPerItem: "£3", amountBought: 17 }}];
     const returnValue = calculateConfectioneryCosts(input);
     expect(input).not.toBe(returnValue);
   });
   test('does not mutate the input array', () => {
-    const input = [{ name: "Beyonce Bowls", yearlyCumulativeSpend: "£44", purchaseToday: { item: "White mice", costPerItem: "£3", amountBought: 17, }}];
+    const input = [{ name: "Beyonce Bowls", yearlyCumulativeSpend: "£44", purchaseToday: { item: "White mice", costPerItem: "£3", amountBought: 17 }}];
     calculateConfectioneryCosts(input);
-    expect(input).toEqual([{ name: "Beyonce Bowls", yearlyCumulativeSpend: "£44", purchaseToday: { item: "White mice", costPerItem: "£3", amountBought: 17, }}]);
+    expect(input).toEqual([{ name: "Beyonce Bowls", yearlyCumulativeSpend: "£44", purchaseToday: { item: "White mice", costPerItem: "£3", amountBought: 17 }}]);
   });
-})
+  test('correctly updates yearlyCumulativeSpend when passed an array containing one celebrity', () => {
+    const input = [{ name: "Beyonce Bowls", yearlyCumulativeSpend: "£44", purchaseToday: { item: "White mice", costPerItem: "£3", amountBought: 17 }}];
+    result = calculateConfectioneryCosts(input);
+    expect(result).toEqual([{ name: "Beyonce Bowls", yearlyCumulativeSpend: "£95"}]);
+  
+  });
+});
