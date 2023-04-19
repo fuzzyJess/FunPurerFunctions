@@ -38,17 +38,18 @@ function cloneObject(target) {
 }
 
 function calculateConfectioneryCosts(celebs) {
-    const calculatedCosts = [];
-    calculatedCosts.push({});
-    calculatedCosts[0].name = celebs[0].name;
-    let itemCost = parseInt(celebs[0].purchaseToday.costPerItem.slice(1));
-    let spentToday = itemCost * celebs[0].purchaseToday.amountBought;
-    let previousSpend = parseInt(celebs[0].yearlyCumulativeSpend.slice(1));
-    let totalSpend = spentToday + previousSpend;
-    calculatedCosts[0].yearlyCumulativeSpend = "£";
-    calculatedCosts[0].yearlyCumulativeSpend += totalSpend;
 
-    
+    const calculatedCosts = [];
+    for (let i = 0; i < celebs.length; i++) {
+        calculatedCosts.push({});
+        calculatedCosts[i].name = celebs[i].name;
+        let itemCost = parseInt(celebs[i].purchaseToday.costPerItem.slice(1));
+        let spentToday = itemCost * celebs[i].purchaseToday.amountBought;
+        let previousSpend = parseInt(celebs[i].yearlyCumulativeSpend.slice(1));
+        let totalSpend = spentToday + previousSpend;
+        calculatedCosts[i].yearlyCumulativeSpend = "£";
+        calculatedCosts[i].yearlyCumulativeSpend += totalSpend;
+    }
     return calculatedCosts;
 }
 
