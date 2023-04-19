@@ -86,5 +86,11 @@ describe('cloneObject', () => {
     const input = { a: 1, b: 2 };
     const returnValue = cloneObject(input);
     expect(input).toBe(returnValue);
+  });
+  test('target object has extra property added from single source object', () => {
+    const target = { a: 1, b: 2 };
+    const source = { c: 5 };
+    const result = cloneObject(target, source);
+    expect(result).toEqual({ a: 1, b: 2, c: 5 });
   })
 })

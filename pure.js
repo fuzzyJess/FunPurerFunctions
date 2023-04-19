@@ -29,6 +29,9 @@ function updateTasks(person) {
 }
 
 function cloneObject(target, source) {
+    for (property in source) {
+        target[property] = source[property];
+    }
     return target;
 }
 
