@@ -55,25 +55,40 @@ function calculateConfectioneryCosts(celebs) {
 
 // Reimplementation
 
+/* The map() method creates a new array populated with the results of calling 
+a provided function on every element in the calling array. */
+
 function map(arr, funct) {
     const mappedArr = [];
     arr.forEach((element) => {
         mappedArr.push(funct(element));
     });
-    console.log(mappedArr);
     return mappedArr;
 };
 
-function multiplyByFive(num){
+function multiplyByFive(num) {
 return num * 5;
 }
+/* The filter() method creates a shallow copy of a portion of a given array, 
+filtered down to just the elements from the given array that pass the test 
+implemented by the provided function. */
 
-function filter() {
-
+function filter(arr, funct) {
+    const filteredArr = [];
+    arr.forEach((element) => {
+        if (funct(element)) {
+            filteredArr.push(element);
+        };
+    });
+    return filteredArr;
 };
+
+function higherThanFive(num) {
+    return num > 5;
+}
 
 function slice() {
 
 };
 
-module.exports = {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts, map, multiplyByFive, filter, slice };
+module.exports = {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts, map, multiplyByFive, filter, higherThanFive, slice };

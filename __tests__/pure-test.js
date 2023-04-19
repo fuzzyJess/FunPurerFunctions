@@ -1,4 +1,5 @@
-const {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts, map, multiplyByFive, filter, slice } = require('../pure.js');
+const { removeLastNumber, raiseSalaries, updateTasks, cloneObject, 
+        calculateConfectioneryCosts, map, multiplyByFive, filter, higherThanFive, slice } = require('../pure.js');
 
 describe('removeLastNumber', () => {
     test('returns a new array', () => {
@@ -166,5 +167,26 @@ describe('map', () => {
     const input = [1, 2, 3];
     result = map(input, multiplyByFive);
     expect(result).toEqual([5, 10, 15]);
+  });
+});
+
+describe('filter', () => {
+  test('returns a new array', () => {
+    const input = [4, 5, 6];
+    const returnValue = filter(input, higherThanFive);
+    expect(input).not.toBe(returnValue);
+  });
+  test('does not mutate the input array when containing primative data types', () => {
+    const input = [4, 5, 6];
+    filter(input, higherThanFive);
+    expect(input).toEqual([4, 5, 6]);
+  });
+  test('correctly filters values in array', () => {
+    const input = [4, 5, 6];
+    result = filter(input, higherThanFive);
+    expect(result).toEqual([6]);
+    const input2 = [3, 29, 5, 12, 6];
+    result2 = filter(input2, higherThanFive);
+    expect(result2).toEqual([29, 12, 6]);
   });
 });
