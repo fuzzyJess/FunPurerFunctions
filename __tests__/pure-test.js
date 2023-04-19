@@ -99,4 +99,10 @@ describe('cloneObject', () => {
     const result = cloneObject(target, source);
     expect(result).toEqual({ a: 1, b: 5 });
   });
+  test('target object modifies existing properties when changed and adds on extra properties', () => {
+    const target = { a: 1, b: 2 };
+    const source = { b: 5, c: 4 };
+    const result = cloneObject(target, source);
+    expect(result).toEqual({ a: 1, b: 5, c: 4 });
+  })
 });
