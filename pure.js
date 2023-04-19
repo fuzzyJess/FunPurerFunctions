@@ -37,4 +37,8 @@ function cloneObject(target) {
     return target;
 }
 
-module.exports = {removeLastNumber, raiseSalaries, updateTasks, cloneObject};
+function calculateConfectioneryCosts(celebs) {
+
+}
+
+module.exports = {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts};

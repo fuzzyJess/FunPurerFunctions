@@ -1,4 +1,4 @@
-const {removeLastNumber, raiseSalaries, updateTasks, cloneObject} = require('../pure.js');
+const {removeLastNumber, raiseSalaries, updateTasks, cloneObject, calculateConfectioneryCosts } = require('../pure.js');
 
 describe('removeLastNumber', () => {
     test('returns a new array', () => {
@@ -113,3 +113,16 @@ describe('cloneObject', () => {
     expect(result).toEqual({ a: 1, b: 5, c: 4, d: 3 });
   });
 });
+
+describe('calculateConfectioneryCosts', () => {
+  test('returns a new array', () => {
+    const input = [{ name: "Beyonce Bowls", yearlyCumulativeSpend: "£44", purchaseToday: { item: "White mice", costPerItem: "£3", amountBought: 17, }}];
+    const returnValue = calculateConfectioneryCosts(input);
+    expect(input).not.toBe(returnValue);
+  });
+  test('does not mutate the input array', () => {
+    const input = [{ name: "Beyonce Bowls", yearlyCumulativeSpend: "£44", purchaseToday: { item: "White mice", costPerItem: "£3", amountBought: 17, }}];
+    calculateConfectioneryCosts(input);
+    expect(input).toEqual([{ name: "Beyonce Bowls", yearlyCumulativeSpend: "£44", purchaseToday: { item: "White mice", costPerItem: "£3", amountBought: 17, }}]);
+  });
+})
