@@ -149,12 +149,17 @@ describe('calculateConfectioneryCosts', () => {
 describe('map', () => {
   test('returns a new array', () => {
     const input = [1, 2, 3];
-    const returnValue = map(input);
+    const returnValue = map(input, multiplyByFive);
     expect(input).not.toBe(returnValue);
   });
   test('does not mutate the input array', () => {
-    const input = ['1', '2', '3'];
-    removeLastNumber(input);
-    expect(input).toEqual(['a', 'b', 'c']);
+    const input = [1, 2, 3];
+    map(input, multiplyByFive);
+    expect(input).toEqual([1, 2, 3]);
   });
+  test('returns new array with one number correctly changed', () => {
+    const input = [1];
+    result = map(input, multiplyByFive);
+    expect(result).toEqual([5]);
+  })
 })

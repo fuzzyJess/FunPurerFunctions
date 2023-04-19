@@ -55,11 +55,13 @@ function calculateConfectioneryCosts(celebs) {
 
 // Reimplementation
 
-function map(funct, arr) {
-    
+function map(arr, funct) {
+    const mappedArr = [];
     arr.forEach((element) => {
-        funct(element)
-    })
+        mappedArr.push(funct(element));
+    });
+    console.log(mappedArr);
+    return mappedArr;
 };
 
 function multiplyByFive(num){
